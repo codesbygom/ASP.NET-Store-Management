@@ -2,6 +2,15 @@
 
 A store management REST API built with **ASP.NET Core 8**, **Entity Framework Core** and **SQL Server**, organised with Clean Architecture. Customers register, browse products and place orders with JWT authentication.
 
+## Repository layout
+
+```
+backend/    ASP.NET Core API (Clean Architecture solution)
+frontend/   Next.js app that uses the API (see frontend/.env.example)
+```
+
+Run the frontend with `cd frontend && npm install && npm run dev` (it proxies `/api` to the API on http://localhost:5100). Backend commands below run from `backend/`.
+
 ## Architecture
 
 ```
@@ -27,7 +36,7 @@ The layout follows the same conventions as a layered portal project: services li
 ## Run locally
 
 ```bash
-cd Store/Store.Web.Api
+cd backend/Store/Store.Web.Api
 dotnet user-secrets set "JwtSettings:Key" "<random string, at least 32 characters>"
 dotnet ef database update --project ../Store.Persistence
 dotnet run

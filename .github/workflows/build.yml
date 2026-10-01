@@ -14,5 +14,5 @@ jobs:
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 8.0.x
-      - run: dotnet restore StoreManagement.sln
-      - run: dotnet build StoreManagement.sln --no-restore -c Release
+      - run: dotnet restore backend/StoreManagement.sln
+      - run: dotnet build backend/StoreManagement.sln --no-restore -c Release
